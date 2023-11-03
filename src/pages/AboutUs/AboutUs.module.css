@@ -1,0 +1,442 @@
+.part_one {
+  display: flex;
+  background: url("../../image/Rectangle\ 241.png");
+  margin-top: 3px;
+}
+
+.aboutUs h2 {
+  color: #362355;
+  font-size: 40px;
+}
+.part_one_details p {
+  line-height: 28px;
+  font-size: 20px;
+}
+.part_one,
+.part_two,
+.part_four,
+.part_five,
+.part_three,
+.part_six_aboutUs p {
+  color: #554766;
+}
+.part_two,
+.part_four,
+.part_five,
+.part_three,
+.part_six_aboutUs p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.part_one h1 {
+  font-size: 48px;
+  color: #9453ff;
+}
+
+.part_one_details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-self: center;
+  width: 70%;
+  margin-left: 10%;
+}
+
+.part_one_images {
+  padding: 2%;
+}
+.play {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+}
+
+.part_two {
+  justify-content: space-around;
+  padding: 5%;
+  display: flex;
+  text-align: left;
+  position: relative;
+}
+
+.part_two_left {
+  width: 40%;
+  padding-top: 7%;
+}
+
+.part_two_right {
+  width: 50%;
+  position: relative;
+  z-index: -1;
+}
+
+.part_two_right img {
+  position: relative;
+  width: 100%;
+}
+
+.part_three {
+  padding: 5%;
+  display: flex;
+  position: relative;
+}
+
+.part_three_left {
+  width: 50%;
+  text-align: right;
+  position: relative;
+}
+.part_three_left img {
+  width: 93%;
+}
+
+.part_three_right {
+  width: 50%;
+  text-align: left;
+}
+.part_three_right_details {
+  margin: 12% 10% 15% 10%;
+}
+
+.part_four {
+  padding: 0 5%;
+  display: flex;
+  text-align: left;
+  position: relative;
+}
+
+.part_four_left {
+  width: 50%;
+}
+
+.part_four_right {
+  border-radius: 10%;
+  width: 50%;
+}
+.part_four_right img {
+  width: 100%;
+}
+.part_four_left_detail {
+  padding: 10%;
+  width: 90%;
+}
+.lines2 img {
+  width: 100%;
+}
+.part_five {
+  padding: 5%;
+  display: flex;
+  text-align: left;
+  position: relative;
+}
+
+.part_five_left {
+  width: 60%;
+}
+
+.part_five_right {
+  width: 40%;
+}
+.part_five_right img {
+  width: 100%;
+}
+.part_five_details {
+  padding: 10%;
+}
+
+.part_six_aboutUs {
+  padding: 5% 5% 7% 0%;
+  display: flex;
+  text-align: left;
+  position: relative;
+}
+
+.part_six_details {
+  background-color: #e2e1e1;
+  width: 50%;
+  border-radius: 0px 32px 32px 0px;
+  display: flex;
+  padding: 30px 30px 0 0;
+  justify-content: center;
+}
+
+.part_six_images {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.part_six_images img {
+  width: 100%;
+}
+
+.part_six_details h2 {
+  color: #9453ff;
+}
+
+.part_six_details p {
+  padding-top: 10%;
+  color: #9387a8;
+}
+
+.part_six_details_content {
+  padding-left: 43%;
+  padding-top: 10%;
+}
+.part_six_details_border {
+  width: 30%;
+  border: 4px solid #feda9c;
+  border-radius: 4px;
+}
+.points {
+  position: absolute;
+  top: 55%;
+  left: 11%;
+  z-index: -1;
+}
+
+.shadow {
+  position: absolute;
+  /* top: -35%; */
+}
+
+.line {
+  top: 57%;
+  position: absolute;
+  z-index: -1;
+}
+.triangle {
+  top: 66%;
+  position: absolute;
+  left: 15%;
+}
+
+.halfCircle {
+  position: absolute;
+  top: 87%;
+}
+
+.shadow2 {
+  position: absolute;
+  right: 0%;
+  top: -55%;
+  z-index: -2;
+}
+
+.lines {
+  position: absolute;
+  right: 0%;
+  top: -40%;
+  z-index: -2;
+}
+
+.point2 {
+  position: absolute;
+  left: 72%;
+  bottom: -7%;
+  z-index: -1;
+}
+
+.lines2 {
+  position: absolute;
+  top: -28%;
+  left: 0%;
+  z-index: 1;
+}
+
+.triangle2 {
+  position: absolute;
+  bottom: -25%;
+  left: 40%;
+}
+
+.boy,
+.woman,
+.animal {
+  margin-top: 20%;
+}
+
+.man {
+  margin-top: 50%;
+  margin-left: 40%;
+}
+
+.boy {
+  margin-left: 20%;
+}
+
+.girl {
+  margin-left: 40%;
+}
+
+.woman {
+  margin-left: 16%;
+}
+
+.dog {
+  margin-left: 20%;
+}
+.animal {
+  margin-left: 40%;
+}
+.part_two p,
+.part_three p,
+.part_four p,
+.part_five p {
+  padding-top: 3%;
+}
+@media screen and (max-width: 768px) {
+  .part_two h2,
+  .part_three h2,
+  .part_four h2,
+  .part_five h2 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .part_one {
+    background: url("../../image/Rectangle\ 241.png");
+    /* padding-top: 10%; */
+    display: block;
+  }
+  .part_one h1 {
+    font-size: 32px;
+  }
+  .part_one p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .part_one_images img {
+    width: 100%;
+  }
+  .part_one_details {
+    width: 86%;
+    margin: 0;
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .part_two {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .part_two p,
+  .part_three p,
+  .part_four p,
+  .part_five p {
+    padding: 10% 0;
+    width: 200%;
+  }
+  .part_two_right {
+    padding-top: 10%;
+    width: 100%;
+  }
+  .part_two_left {
+    width: 185px;
+  }
+  .part_two_right img {
+    width: 100%;
+  }
+  .part_three {
+    display: flex;
+    flex-direction: column;
+  }
+  .part_three_right_details {
+    width: 100%;
+  }
+  .part_three_right_details {
+    margin-left: 0%;
+  }
+  .part_three_left img {
+    width: 200%;
+  }
+  .part_four {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .part_four_right img {
+    width: 200%;
+  }
+  .part_four_left {
+    padding-top: 5%;
+    width: 50%;
+  }
+  .part_four_left_detail {
+    width: 100%;
+    padding: 0;
+  }
+  .part_five {
+    display: block;
+  }
+  .part_five_left {
+    width: 100%;
+  }
+  .part_five_right {
+    width: 100%;
+  }
+  .part_five_right img {
+    width: 100%;
+  }
+  .part_five_details p {
+    width: 110%;
+  }
+  .part_five_details{
+    width: 95%;
+    padding: 0%;
+  }
+  .part_six_aboutUs {
+    display: block;
+    padding: 5% 5% 20% 5%
+  } 
+  .part_six_details {
+    background-color: #e2e1e1;
+    width: 90%;
+    border-radius: 16px;
+    padding: 5%;
+    justify-content: center;
+  }
+  .part_six_details_content {
+    margin-bottom: 10%;
+  }
+  .part_six_images {
+    padding-top: 15%;
+    width: 86%;
+    margin: 0;
+  }
+  .part_six_images img {
+    width: 150%;
+  }
+  .part_six_images_first {
+    width: 150%;
+  }
+  .part_six_images_second {
+    width: 200%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .part_six_images_third {
+    width: 150%;
+    margin-left: 10%;
+  }
+  .points,
+  .shadow,
+  .line,
+  .triangle,
+  .point2,
+  .shadow2,
+  .lines,
+  .lines2,
+  .triangle2,
+  .halfCircle {
+    display: none;
+  }
+  .part_three_right_details p {
+    width: 200%;
+  }
+  .part_six_details_content h2{
+    font-size: 32px;
+  }
+  .part_six_details_content{
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,226 @@
+.List {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+}
+.List p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.List h1 {
+  font-size: 32px;
+  padding-bottom: 5%;
+}
+.CourseListDetail {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 5%;
+}
+
+.listCourse {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  height: fit-content;
+}
+
+.paginationBttns {
+  padding: 2%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #9387a8;
+  color: #9453ff;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: #9453ff;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: #9453ff;
+}
+
+.listButton button {
+  background-color: #f7f5fa;
+  padding: 4px 8px;
+  color: #9387a8;
+  margin-right: 8px;
+  border: 1px solid #cac1d8;
+  border-radius: 4px;
+  height: 28px;
+}
+.listButton {
+  text-align: left;
+  padding-left: 16px;
+  margin-top: 20px;
+}
+.listButton h3 {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  width: 268px;
+  height: 48px;
+}
+.listCourseTitle_img {
+  width: 100%;
+}
+.cart button {
+  background-color: #9453ff;
+  color: #ffffff;
+  width: 167px;
+  height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cart {
+  display: flex;
+  margin: 0 0 24px 16px;
+}
+.cart button {
+  width: 167px;
+  height: 40px;
+  margin-right: 8px;
+  border: none;
+  cursor: pointer;
+}
+.cart img {
+  width: 40px;
+  height: 40px;
+}
+.course_part_1 {
+  background: linear-gradient(0deg, #9453ff, #9453ff),
+    url(../../image/Rectangle\ 241.png);
+  background-blend-mode: soft-light, normal;
+  text-align: left;
+  display: flex;
+  margin-top: 3px;
+}
+.title a {
+  text-decoration: none;
+  color: #554766;
+}
+.coursePart1Right img {
+  width: 110%;
+}
+.course_part_1 h1 {
+  color: #9453ff;
+  font-size: 48px;
+}
+.course_part_1 p {
+  color: #554766;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 28px;
+}
+.coursePart1Left {
+  margin: 96px 24px 96px 80px;
+}
+.coursePart1Right {
+  padding: 5%;
+}
+.categoryOfCourse {
+  padding: 0 5%;
+  width: 30%;
+}
+#searchInput {
+  padding: 2%;
+  border: none;
+  height: 40px;
+  width: 80%;
+}
+.searchCourse {
+  border-radius: 5px;
+  align-items: center;
+  width: 70%;
+  display: flex;
+  border: 1px solid #cac1d8;
+}
+.searchIcon {
+  padding-left: 5%;
+}
+.searchBar {
+  padding-top: 3%;
+  display: flex;
+  width: 100%;
+}
+.levelBox {
+  padding: 2% 0;
+  display: flex;
+}
+.levelBox p {
+  color: #9387a8;
+  padding-left: 3%;
+}
+.skill {
+  padding-top: 5%;
+}
+.searchInput_Container {
+  border: 1px solid #cac1d8;
+  border-radius: 5px;
+  width: 80%;
+}
+.levelAll {
+  padding-top: 5%;
+}
+.templateContainer {
+  display: flex;
+}
+.searchFilter {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .CourseListDetail {
+    display: block;
+  }
+  .skillsAndLevels {
+    display: none;
+  }
+  .course_part_1 {
+    display: block;
+  }
+  .course_part_1 h1{
+    font-size: 24px;
+  }
+  .course_part_1 p{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .coursePart1Left {
+    padding: 5%;
+    margin: 0;
+  }
+  .coursePart1Right {
+    margin: 0;
+  }
+  .coursePart1Right img {
+    width: 100%;
+  }
+  .categoryOfCourse {
+    width: 90%;
+  }
+  .List {
+    padding-left: 12%;
+    padding-top: 12%;
+    width: 86%;
+  }
+  .templateContainer {
+    display: flex;
+  }
+  .searchInput_Container {
+    width: 100%;
+  }
+  .paginationBttns{
+    padding: 10%;
+  }
+}

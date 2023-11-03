@@ -1,0 +1,241 @@
+.background {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  z-index: -1;
+}
+.layout_background {
+  background-color: #140b25;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.5;
+}
+#wrapper {
+  display: flex;
+  justify-content: center;
+  background: url("../../image/OBJECTS.png");
+}
+#login {
+  background-color: #ffffff;
+  padding: 40px 64px 40px 64px;
+  border-radius: 4px;
+  z-index: 2;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #554766;
+  width: 30%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.logo1 {
+  display: flex;
+  justify-content: center;
+}
+
+
+.login_input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  border: 1px solid #cac1d8;
+  border-radius: 4px;
+  margin-top: 2%;
+}
+
+.login_input:focus {
+  border: 2px solid #554766;
+  outline: none;
+}
+
+.btn_wrapper button {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  background: #9453ff;
+  border-radius: 4px;
+  border: none;
+}
+.btn-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.btn_wrapper button{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.change_to_signUp  a{
+  padding-left:1% 
+ }
+
+.forgot_psw a{
+  color: #554766;
+  display: flex;
+  padding-top: 10px;
+  text-decoration: none;
+  justify-content: center;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.lds_ring {
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 0%;
+}
+.lds_ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+  top: 10%
+}
+.lds_ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds_ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds_ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.change_to_signUp {
+  padding: 3% 0 8% 0;
+  display: flex;
+  justify-content: center;
+  color: #9387a8;
+}
+.change_to_signUp span{
+  font-weight: 100;
+}
+.heading h1{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+    padding: 6%;
+}
+.continue button{
+    width: 100%;
+    height: 48px;
+    border-color: #9387A8;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+}
+.continue {
+  padding-top: 9%;
+}
+.continue_facebook{
+  margin-bottom: 3%;
+}
+.continue img{
+  margin-bottom: -1%;
+  margin-right: 2%;
+}
+button:hover {
+  border-color: yellowgreen;
+	color: var(--secondaryColor);
+  /* background-color: #9453ff; */
+}
+.change_to_signUp :hover,
+.forgot_psw :hover{
+  color: var(--secondaryColor);
+  
+}
+.continue{
+  display: none;
+}
+.loadingIcon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.email{
+  padding: 3% 0;
+}
+.psw {
+  padding-bottom: 5%;
+}
+.loadingText {
+  margin-left: 5px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.validMsg{
+  font-size: 12px;
+  color: red;
+  font-weight: 500;
+}
+@media screen and (max-width: 768px){
+  #login, 
+  .btn_wrapper{
+   font-size: 10px;
+  }
+  .heading h1{
+   font-size: 14px;
+  }
+  #login button{
+   font-size: 10px;
+  }
+  .continue{
+    display: block;
+   }
+
+}
+@media screen and (max-width: 400px){
+  #login{
+    top: 40%;
+   }
+}

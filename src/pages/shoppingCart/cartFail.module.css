@@ -1,0 +1,41 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 80px;
+  }
+  .cart img {
+    width: 280px;
+    height: 300px;
+  }
+
+  .cart p {
+    color: #554766;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .cart h2 {
+    color: #BB222A;
+  }
+  .cart button{
+    background: #9453ff;
+    border-radius: 4px;
+    width: 278px;
+    height: 56px;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: large;
+  }
+  .cart h1{
+    font-size: 40px;
+  }
+  @media screen and (max-width: 768px){
+    .cart img{
+      width: 100%;
+      height: 100%;
+    }
+  }

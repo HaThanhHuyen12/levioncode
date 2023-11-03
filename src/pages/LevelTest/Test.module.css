@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.testBody {
+  display: flex;
+  text-align: center;
+  width: 47%;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #f2ebfd;
+  gap: 20px;
+}
+.testBody img {
+  width: 50%;
+  margin: 0 auto;
+}
+.testContent{
+  padding: 4%;
+}
+.testTitle {
+  font-size: 29px;
+  color: #9453ff;
+}
+.test {
+  padding: 5% 0 10% 0;
+}
+.testButton {
+  padding: 0.1em 1.2em;
+  height: 50px;
+  display: inline-block;
+  background-color: #9453ff;
+  border: none;
+  color: #ffffff;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 15px;
+}
+.test button{
+  margin-bottom: 5%;
+}
+@media screen and (max-width: 768px) {
+  .testBody{
+    width: 72%;
+  }
+  .testContent {
+    font-size: 10px;
+  }
+  .testButton {
+    padding: 0.1em 1.2em;
+    font-size: 13px;
+  }
+  .testTitle {
+    font-size: 30px;
+  }
+  .testBody h1{
+    font-size: 20px;
+  }
+}

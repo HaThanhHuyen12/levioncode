@@ -1,0 +1,494 @@
+.profile {
+  background-color: #f7f5fa;
+  position: relative;
+  z-index: 1;
+}
+.contents {
+  padding: 5%;
+  position: relative;
+  display: flex;
+  z-index: -1;
+  justify-content: space-around;
+}
+.profilePerson {
+  height: 724px;
+  width: 28%;
+  padding: 3%;
+  background-color: #ffffff;
+}
+.uploadImg {
+  padding-bottom: 3%;
+  text-align: center;
+}
+
+.uploadButton h4 {
+  color: #aa77ff;
+}
+.uploadButton button {
+  display: flex;
+  justify-content: space-around;
+  /* width: 60%; */
+  height: 50px;
+  align-items: center;
+  border: 1px solid #aa77ff;
+  margin: auto;
+  background-color: #ffffff;
+  margin-top: 2%;
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+}
+.userInfo p {
+  color: #281c42;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+.editUser {
+  display: flex;
+}
+
+.editUser p {
+  color: #9453ff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  display: flex;
+}
+.iconEdit,
+.iconCheck {
+  display: flex;
+  color: #9453ff;
+  font-size: 35px;
+}
+.iconEdit {
+  padding-top: 5%;
+  font-size: 18px;
+}
+
+.Check,
+.Edit {
+  height: 40px;
+  display: flex;
+}
+.iconCheck {
+  font-size: 25px;
+}
+.doneText,
+.editText {
+  padding-top: 8%;
+}
+.editText {
+  font-size: 16px;
+  padding-left: 11%;
+}
+.userInfomationDetails {
+  padding-top: 5%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.userInfomationDetails img {
+  width: 24px;
+  height: 24px;
+}
+.edit input {
+  padding-left: 12px;
+  border: 1px solid #add8e6;
+  border-radius: 4px;
+}
+.edit input:focus {
+  border: 2px solid #add8e6;
+  box-shadow: 0 0 5px #add8e6;
+  padding-left: 12px;
+  outline: none;
+  border-radius: 4px;
+}
+.edit2 input {
+  background-color: #ffffff;
+  border: 1.6px solid #ffffff;
+}
+.frameInfo {
+  padding-top: 10%;
+}
+.userInfomationDetails p {
+  color: #281c42;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 2px;
+}
+
+.userInfomationDetails h6 {
+  color: #281c42;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  height: 28px;
+}
+.userInfomationDetails input {
+  color: #281c42;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 28px;
+  width: 100%;
+}
+.UserInfoDetails {
+  margin-left: 12px;
+  width: 100%;
+}
+.inputInfo input {
+  /* padding-left: 12px; */
+  border: 1px solid #add8e6;
+  border-radius: 4px;
+  width: 97%;
+}
+.inputInfo input:focus {
+  border: 2px solid #add8e6;
+  box-shadow: 0 0 5px #add8e6;
+  padding-left: 12px;
+  outline: none;
+  border-radius: 4px;
+}
+.profilePerson button {
+  margin: 0 auto;
+  padding: 5%;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 36px;
+  display: flex;
+  color: #aa77ff;
+  background-color: white;
+  border: 2px solid #aa77ff;
+}
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  /* height: 6vh; */
+  /* width: 36vw; */
+  background-color: #f7f5fa;
+}
+.second {
+  background-color: #ffffff;
+}
+.tab {
+  /* flex: 1; */
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #dbdbdb;
+  width: 12vw;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 1px solid #9453ff;
+  height: 45px;
+}
+.tab p {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7%;
+}
+.active-tab {
+  border: 1px solid #9453ff;
+  background-color: #ffffff !important;
+  border-bottom: none;
+}
+.active-tab:hover {
+  border: 1px solid #9453ff;
+  background-color: #ffffff !important;
+  border-bottom: none;
+}
+.itemLearning {
+  padding: 5%;
+  display: flex;
+  border-bottom: 1px solid;
+}
+.contentTabs {
+  position: relative;
+}
+.content {
+  position: relative;
+  display: none;
+}
+.content-active {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  transition: all 1s ease-in-out;
+  animation: example 0.3s;
+}
+.process img {
+  width: 100%;
+  height: 100%;
+  margin-top: 2%;
+}
+.LearningJourneyLeft img {
+  width: 28%;
+  height: 88%;
+  margin-top: 2%;
+}
+.infoCourse h6 {
+  color: #362355;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32px;
+  margin-bottom: 6px;
+  width: 394px;
+  height: 32px;
+}
+.infoCourse p {
+  color: #9387a8;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 3%;
+}
+.infoCourse button {
+  color: #aa77ff;
+  background-color: #ffffff;
+  height: 30px;
+  border: 1px solid #aa77ff;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  width: 30%;
+}
+.infoCourse {
+  padding-left: 3%;
+  border-right: 1px solid #9387a8;
+}
+.skills {
+  width: 100%;
+  padding: 3% 0;
+  display: flex;
+}
+
+.levels {
+  background: #f7f5fa;
+  border-radius: 4px;
+  height: 28px;
+  width: 23%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid #cac1d8;
+}
+.speaking {
+  margin-left: 3%;
+  background: #f7f5fa;
+  border-radius: 4px;
+  height: 28px;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid #cac1d8;
+}
+.process {
+  width: 17%;
+  text-align: center;
+}
+.process p {
+  color: #9387a8;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+.process img {
+  width: 71px;
+  height: 71px;
+}
+.LearningJourney {
+  width: 90%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+}
+.LearningJourney h6 {
+  margin: 0;
+}
+.LearningJourney p {
+  margin: 0;
+}
+.Content-Learning {
+  width: 100%;
+}
+
+.password {
+  width: 100%;
+  margin: 18% 18%;
+}
+.changePassword {
+  width: 520px;
+  height: 404px;
+  text-align: left;
+}
+.changePasswordDetail label {
+  color: #554766;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+.changePasswordDetail input {
+  color: #9387a8;
+  width: 95%;
+  height: 48px;
+  border: 1px solid #cac1d8;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+  margin-bottom: 36px;
+}
+.changePassword input::placeholder {
+  padding: 12px 0 12px 12px;
+}
+.saveChanges {
+  text-align: right;
+}
+.saveChanges button {
+  color: #f2ebfd;
+  background-color: #cac1d8;
+  margin-top: 24px;
+  height: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  line-height: 24px;
+}
+.changePasswordDetail input:focus {
+  border: 2px solid #add8e6;
+  box-shadow: 0 0 5px #add8e6;
+  padding-left: 12px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.LearningJourneyLeft {
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .userInfomationDetails p {
+    display: none;
+  }
+  .userInfo p {
+    display: none;
+  }
+  .tab {
+    width: 100px;
+  }
+  .contents {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .profilePerson {
+    height: 470px;
+    width: 100%;
+    padding: 5% 0;
+    display: block;
+  }
+  .profilePerson button {
+    padding: 0;
+    width: 16%;
+    height: 41px;
+    margin-top: 2%;
+  }
+  .frameInfo {
+    padding: 0 5%;
+  }
+  .second {
+    height: 800px;
+    width: 100%;
+  }
+  .Content-Learning {
+    width: 100%;
+  }
+  .LearningJourney {
+    display: block;
+  }
+  .LearningJourney button {
+    font-size: 11px;
+  }
+  .infoCourse {
+    width: 100%;
+    border: none;
+  }
+  .infoCourse p {
+    font-size: 15px;
+    width: 100%;
+  }
+  .LearningJourneyLeft img {
+    width: 16vw;
+  }
+  .process {
+    display: flex;
+    width: 100%;
+  }
+  .process img {
+    height: 4vh;
+    width: 8vw;
+  }
+  .LearningJourneyLeft {
+    width: 100%;
+  }
+  .process p {
+    margin: 5%;
+  }
+  .LearningJourney h6 {
+    width: 100%;
+    font-size: 16px;
+  }
+  .skills {
+    width: 100%;
+  }
+  .password {
+    width: 100%;
+  }
+  .WishList {
+    width: 100%;
+  }
+
+  .levels p {
+    justify-content: center;
+    display: flex;
+    font-size: 10px;
+  }
+  .speaking p {
+    justify-content: center;
+    display: flex;
+    font-size: 10px;
+  }
+  .changePassword {
+    width: 100%;
+  }
+  .password input {
+    width: 100%;
+  }
+  .saveChanges {
+    text-align: center;
+  }
+}

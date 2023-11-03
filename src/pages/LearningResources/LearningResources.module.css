@@ -1,0 +1,99 @@
+.first {
+  display: flex;
+  background: url("../../image/Rectangle\ 241.png");
+  margin-top: 3px;
+}
+.first_details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-self: center;
+  width: 70%;
+  margin-left: 10%;
+}
+.first_images img {
+  width: 100%;
+}
+.first_details h1 {
+  color: #9453ff;
+  font-size: 48px;
+}
+.first_details p {
+  color: #554766;
+  font-size: 20px;
+  line-height: 28px;
+}
+.second img {
+  width: 100%;
+}
+.digitalFlashcards img {
+  width: 100%;
+}
+.second_first,
+.second_second {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+.second_first,
+.second_second p {
+  text-align: center;
+  color: #362355;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+.second_first a {
+  text-decoration: none;
+}
+.second_second a {
+  text-decoration: none;
+}
+.block {
+  width: 80%;
+}
+.second {
+  padding-bottom: 6%;
+}
+@media screen and (max-width: 768px) {
+  .second_first{
+    display: flex;
+    padding: 7% 0;
+    flex-direction: column;
+  }
+  .block {
+    width: 100%;
+  }
+  .first,
+  .second {
+    padding: 5%;
+    display: block;
+  }
+  .first_details h1 {
+    font-size: 32px;
+  }
+  .first_details p {
+    padding: 6% 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .first_details {
+    margin: 0;
+    width: 100%;
+  }
+  .second img {
+    width: 70%;
+  }
+  .second_second img {
+    padding-left: 15%;
+  }
+  .second p {
+    font-size: 17px;
+    padding: 5% 0;
+  }
+  .second_second{
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+  }
+}

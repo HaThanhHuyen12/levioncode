@@ -1,0 +1,166 @@
+.firstPodcast {
+  display: flex;
+  background: url("../../image/Rectangle\ 241.png");
+  margin-top: 3px;
+  padding: 3%;
+}
+.first_details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-self: center;
+  width: 70%;
+  margin-left: 10%;
+}
+.first_images img {
+  width: 100%;
+}
+.first_details h1 {
+  color: #9453ff;
+  font-size: 48px;
+}
+.first_details p {
+  color: #554766;
+  font-size: 20px;
+  line-height: 28px;
+}
+.categoryOfBlog {
+  padding: 0 2.5%;
+  width: 30%;
+}
+.templateContainerBlog {
+  margin-top: 5%;
+  display: flex;
+}
+.searchInput_ContainerBlog {
+  border: 1px solid #CAC1D8;
+  border-radius: 5px;
+  width: 100%;
+}
+#searchInputBlog {
+  padding: 2%;
+  border: none;
+  height: 40px;
+  width: 80%;
+}
+.backBlock {
+  display: flex;
+  width: 30%;
+  padding: 2% 0% 0 2.5%;
+}
+.backBlock p {
+  color: #9387a8;
+}
+.backBlock a {
+  margin-top: -3px;
+  padding-left: 2%;
+  text-decoration: none;
+}
+
+.listPodcast {
+  display: flex;
+  width: 100%;
+  height: 250px;
+  border: 1px solid #cac1d8;
+  border-radius: 16px;
+  margin-bottom: 5%;
+}
+.PodcastBodyDetail {
+  display: flex;
+}
+.PodcastDetail {
+  padding-right: 2.5%;
+  width: 70%;
+}
+.listPodcastDetail h1 {
+  line-height: 32px;
+  font-size: 24px;
+  color: #362355;
+}
+.listPodcastDetail p {
+  font-size: 16px;
+  color: #362355;
+}
+.listPodcastDetail {
+  padding: 4%;
+}
+.listPodcastDetail button {
+  color: #9453ff;
+  border: 1px solid #9453ff;
+  background-color: #fff;
+  height: 40px;
+  border-radius: 4px;
+  width: 120px;
+  margin-top: 4%;
+  cursor: pointer;
+}
+.listPodcastDetail button:hover {
+  background-color: #9453ff;
+  color: #fff;
+}
+.categoryOfBlog {
+  padding-bottom: 3%;
+}
+.listPodcastIcon {
+  display: flex;
+  justify-content: end;
+}
+@media screen and (max-width: 768px) {
+  .firstPodcast{
+    padding: 7%;
+    display: block;
+  }
+  .first_details h1 {
+    font-size: 32px;
+  }
+  .first_details p {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 5% 0;
+
+  }
+  .first_details{
+    width: 100%;
+    margin: 0;
+  }
+  .first_images img {
+    padding: 5% 0;
+  }
+  .PodcastBodyDetail{
+    flex-direction: column-reverse;
+    display: flex;
+
+  }
+  .listPodcast h1{
+    font-size: 13px;
+
+  }
+  .listPodcast p{
+    font-size: 10px;
+  }
+  .listPodcast img{
+    padding-top: 18%;
+    height: 100px;
+    width: 37%;
+    padding-left: 5%;
+  }
+  .PodcastDetail{
+    padding: 5%;
+    width: 90%;
+  }
+  .PodcastDetail button{
+    height: 30px;
+    width: 40%;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .listPodcast {
+    height: 226px;
+    border-radius: 4px;
+  }
+  .categoryOfBlog {
+    padding-left: 5%;
+    width: 90%;
+    padding-bottom: 3%;
+  }
+}

@@ -1,0 +1,29 @@
+.empty {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 5% 0 15% 0;
+}
+.empty img {
+  width: 280px;
+  height: 300px;
+}
+.empty button {
+  background: #9453ff;
+  border-radius: 4px;
+  width: 335px;
+  height: 56px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: large;
+}
+.empty p {
+  color: #554766;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+}

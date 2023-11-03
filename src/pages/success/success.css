@@ -1,0 +1,76 @@
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layout_background {
+  background-color: #140b25;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  opacity: 0.6;
+}
+#login {
+  max-width: 656px;
+  max-height: 564px;
+  background-color: #ffffff;
+  padding: 40px 64px 40px 64px;
+  border-radius: 4px;
+  z-index: 2;
+}
+.logo1 {
+  width: 156px;
+  height: 44px;
+  padding-left: 200px;
+}
+
+.logo2 {
+  height: 280px;
+  width: 259px;
+  left: 95px;
+  top: 76px;
+  margin-left: 140px;
+}
+
+h1 {
+  color: #38b520;
+  font-family: Google Sans;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  padding-left: 66px;
+}
+h2 {
+  color: #554766;
+  font-family: Google Sans;
+  font-size: 20px;
+  line-height: 28px;
+  padding-left: 110px;
+}
+
+.lable :focus {
+  border: 2px solid #554766;
+}
+
+button {
+  justify-content: center;
+  align-items: center;
+  width: 528px;
+  height: 56px;
+  background: #9453ff;
+  border-radius: 4px;
+  border: none;
+  margin-top: 20px;
+}
+.submit {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+}

@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+
+:root {
+  --mainColor: #ffffff;
+  --mainColorLight: #5767aa;
+  --secondaryColor: #aa77ff;
+  --textColor: #9387a8;
+  --fontFamily: "Source Code Pro", monospace;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  box-shadow: 1px 1px 5px black;
+}
+.imgheader {
+  padding-left: 6%;
+}
+nav a {
+  padding: 0 1.5em;
+  color: var(--textColor);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 52px;
+  /* font-family: var(--fontFamily); */
+}
+.shoppingCart {
+  padding-top: 2%;
+}
+nav a:hover {
+  color: var(--secondaryColor);
+}
+nav .addToCart:hover {
+  transform: scale(1.2);
+  color: var(--secondaryColor);
+}
+
+header .nav-btn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  visibility: hidden;
+  opacity: 1;
+  font-size: 2.4rem;
+}
+
+header div,
+nav {
+  display: flex;
+  /* align-items: center; */
+}
+.cow_header {
+  display: none;
+}
+/* .header_right1{
+  display: none;
+} */
+/* .header_right{
+  display: none;
+} */
+
+.header_right1 button {
+  display: inline-block;
+  padding: 0.1em 1.2em;
+  background-color: #9453ff;
+  border-radius: 4px;
+  color: #ffffff;
+  border: none;
+  height: 48px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+#btn_left {
+  color: #9453ff;
+  background-color: #ffffff;
+  border: 1px solid #9453ff;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+#SignIn {
+  margin: 0 auto;
+}
+.menuLearning {
+  margin-left: 1.5%;
+  margin-top: 3%;
+  width: 13%;
+}
+.menuLearning li {
+  margin-top: -1%;
+}
+
+ul li ul {
+  position: absolute;
+  display: none;
+  background-color: #ffffff;
+  padding: 1%;
+}
+ul li ul li a {
+  font-size: 15px;
+}
+.cow_header_nav {
+  display: none;
+}
+.Learning ul {
+  list-style: none;
+  padding: 0px;
+}
+.Profile ul {
+  list-style: none;
+}
+.LearningIcon {
+  font-size: 30px;
+}
+.menuIcon {
+  display: flex;
+}
+/* .titleLearning {
+  margin-top: 1%;
+} */
+nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: #5767aa;
+}
+.LearningIcon {
+  margin-left: -10%;
+  margin-top: 5%;
+}
+#SignIn button:hover {
+  background-color: #9453ff;
+  color: #ffffff;
+}
+#SignUp button:hover {
+  background-color: #ffffff;
+  color: #9453ff;
+  border: 1px solid #9453ff;
+}
+/* .addToCart1 {
+  display: none;
+} */
+.btnCart {
+  padding: 0 2% 2% 0;
+  display: none;
+}
+#noti{
+  padding-top: 1%;
+}
+#Heart{
+  padding-top: 1%;
+}
+.Profile {
+  padding-top: 2%;
+  padding-left: 7%;
+}
+.btnProfile {
+  padding: 0;
+}
+.Profile button {
+  width: 97%;
+  border: none;
+  height: 30px;
+  margin-top: 10%;
+  font-weight: 600;
+}
+.Profile ul li {
+  width: 100%;
+}
+.list-close-btn {
+  display: none;
+}
+.responsive-header,
+.text-header{
+  display: flex;
+}
+.header_right_Icon{
+  padding-top: 2%;
+}
+.show {
+  display: block;
+  width: 15%;
+}
+.showProfile{
+  display: block;
+}
+@media screen and (max-width: 1368px) {
+  nav a {
+    font-size: 20px;
+    padding: 0 0.2em;
+  }
+  .imgheader {
+    padding: 1%;
+  }
+  .imgheader img {
+    width: 100%;
+  }
+  .LearningIcon {
+    padding-left: 1em;
+  }
+}
+
+@media screen and (max-width: 1164px) {
+  nav a {
+    font-size: 18px;
+    padding: 0 0.2em;
+  }
+  .imgheader img {
+    width: 100%;
+  }
+  .addToCart1 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+  header {
+    width: 100%;
+  }
+
+  header nav {
+    padding-left: 5%;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #fff;
+    transition: 1s;
+  }
+
+  header .responsive_nav {
+    transform: translateY(100vh);
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+  .cow_header {
+    margin: 0 auto;
+    display: flex;
+  }
+  .logo {
+    display: none;
+    width: 100%;
+  }
+  .header_right1 {
+    display: contents;
+    flex-direction: column-reverse;
+  }
+  .cow_header_nav {
+    padding-top: 11%;
+    display: flex;
+  }
+  .addToCart1 {
+    display: flex;
+  }
+  .shoppingCart {
+    display: none;
+  }
+  .list-close-btn {
+    position: absolute;
+    display: flex;
+  }
+  .menuIcon.hide-chevron .LearningIcon > svg:first-child {
+    display: none;
+  }
+
+  .menuIcon.hide-chevron .LearningIcon > svg:last-child {
+    display: inline-block;
+  }
+  .show {
+    margin-left: 0;
+    margin-top: 10%;
+    display: block;
+    width: 70%;
+    border: 1px solid;
+  }
+  header div,
+  nav {
+    display: flex;
+    align-content: flex-start;
+  }
+  #SignIn {
+    margin: 0;
+  }
+  .text-header{
+    display: flex;
+    flex-direction: column;
+  }
+  .responsive-header{
+    flex-direction: column-reverse;
+  }
+  .btnHeader{
+    display: flex;
+    flex-direction: column;
+  }
+  #SignUp{
+    margin-top: 5%;
+  }
+  .header_right_Icon{
+    display: none;
+  }
+  .Profile{
+    padding: 0;
+  }
+  .btnCart{
+    display: flex;
+  }
+
+}
