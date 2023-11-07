@@ -224,3 +224,7 @@
     padding: 10%;
   }
 }
+.List a{
+  text-decoration: none;
+  color: black;
+}

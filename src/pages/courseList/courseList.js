@@ -14,11 +14,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import { addItemToFirestore } from "../login/firebase";
-import {
-  getItemShoppingCartFromFirestore,
-} from "../login/firebase";
+import { getItemShoppingCartFromFirestore } from "../login/firebase";
 import LayoutWithHeader from "../../components/layoutWithHeader";
-
+import { Link } from "react-router-dom";
 function CourseList() {
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
@@ -71,10 +69,14 @@ function CourseList() {
           price: course.price,
           userEmail: currentUser.email,
         };
-  
+
         try {
-          const cartItems = await getItemShoppingCartFromFirestore(currentUser.email);
-          const isItemInCart = cartItems.some((item) => item.name === course.name);
+          const cartItems = await getItemShoppingCartFromFirestore(
+            currentUser.email
+          );
+          const isItemInCart = cartItems.some(
+            (item) => item.name === course.name
+          );
           if (isItemInCart) {
             toast.warning("This item is already in your shopping cart!", {
               position: toast.POSITION.BOTTOM_RIGHT,
@@ -88,8 +90,10 @@ function CourseList() {
               autoClose: 3000,
             });
             navigate("/shoppingCart");
-    
-            const updatedCart = await getItemShoppingCartFromFirestore(currentUser.email);
+
+            const updatedCart = await getItemShoppingCartFromFirestore(
+              currentUser.email
+            );
             setCart(updatedCart);
           }
         } catch (error) {
@@ -100,9 +104,8 @@ function CourseList() {
       window.confirm("Please log in before adding to the cart!");
     }
   };
-  
 
-  const filteredCourses= data
+  const filteredCourses = data
     .filter((val) => {
       if (!searchTerm) {
         return true;
@@ -186,15 +189,18 @@ function CourseList() {
                 <div className={styles.listButton}>
                   <button>{course.level}</button>
                   <button>{course.skill} Skills</button>
-                  <h3 className={styles.title}>
-                    <p>{course.name}</p>
-                  </h3>
+                  <a href="/courseDetail">
+                    <h3 className={styles.title}>
+                      <p>{course.name}</p>
+                    </h3>
+                  </a>
+
                   <h1>${course.price}.00</h1>
                 </div>
                 <div className={styles.cart}>
-                    <button onClick={() => handleAddToCart(course)}>
-                      Add To Cart
-                    </button>
+                  <button onClick={() => handleAddToCart(course)}>
+                    Add To Cart
+                  </button>
                   <img src={heart} alt="heart" />
                 </div>
               </div>

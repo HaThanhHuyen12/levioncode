@@ -85,7 +85,7 @@ function Login() {
           });
         }
 
-        navigate("/shoppingCart");
+        navigate("/homePage");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -106,7 +106,7 @@ function Login() {
       const user = result.user;
       console.log("data", result);
       localStorage.setItem("data", JSON.stringify(user));
-      navigate("/shoppingCart");
+      navigate("/homePage");
     } catch (error) {
       console.log(error);
     } finally {
