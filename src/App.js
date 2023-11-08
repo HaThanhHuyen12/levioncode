@@ -52,7 +52,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blogDetail/:id" element={<BlogDetail />} />
           <Route path="/podcast" element={<Podcast />} />
-          <Route path="/forgot_password" element={<ForgotPassword />} />
+          {/* <Route path="/forgot_password" element={<ForgotPassword />} /> */}
           <Route path="/empty" element={<Empty />} />
         </Routes>
       </LevionContextProvider>

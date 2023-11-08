@@ -40,6 +40,10 @@ nav .addToCart:hover {
   color: var(--secondaryColor);
 }
 
+.active {
+  color: #9453ff;
+}
+
 header .nav-btn {
   cursor: pointer;
   background: transparent;

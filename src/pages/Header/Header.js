@@ -1,10 +1,10 @@
 import logo from "../../image/logo 1.png";
 import "../Header/Header.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import cart1 from "../../image/Icon Cart.png";
 import cow_header from "../../image/cow-header.png";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 
 function Navbar() {
@@ -13,6 +13,7 @@ function Navbar() {
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
   };
+
 
   return (
     <header>
@@ -83,9 +84,9 @@ function Navbar() {
         </nav>
       </div>
       <div className="btnCart">
-      <Link to="/shoppingCart">
-        <img className="addToCart1" src={cart1} alt="cart"></img>
-      </Link>
+        <Link to="/shoppingCart">
+          <img className="addToCart1" src={cart1} alt="cart"></img>
+        </Link>
       </div>
       <button className="nav-btn" onClick={showNavbar}>
         <FaBars />

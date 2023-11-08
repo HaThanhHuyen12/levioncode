@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BiChevronDown, BiMinus, BiMenu, BiChevronRight } from "react-icons/bi";
 import { signOut } from "firebase/auth";
 import { auth } from "../login/firebase";
@@ -10,6 +10,8 @@ import cow_header from "../../image/cow-header.png";
 import heart from "../../image/heart1.png";
 import noti from "../../image/notification.png";
 import avtProfile from "../../image/avtcourse.png";
+import { useEffect } from "react";
+import "../Header/Header.css";
 
 function HeaderProfile() {
   const navigate = useNavigate();
@@ -18,6 +20,14 @@ function HeaderProfile() {
     localStorage.removeItem("data");
     window.location.reload(true);
   };
+
+  const [href, setHref] = useState("");
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setHref(location.pathname);
+  }, [])
 
   const navRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -126,12 +136,12 @@ function HeaderProfile() {
           </div>
           <div className="responsive-header">
             <div className="text-header">
-              <Link to="/test">Level Test</Link>
-              <Link to="/courseList">Courses</Link>
+              <Link to="/test" className={href.includes('test') ? 'active' : ''}>Level Test</Link>
+              <Link to="/courseList" className={href.includes('courseList') ? 'active' : ''}>Courses</Link>
               <div className="Learning">
                 <ul>
                   <li className="menuIcon">
-                    <Link to="/learningResources" className="titleLearning">
+                    <Link to="/learningResources" className={href.includes('learningResources') ? 'active titleLearning' : 'titleLearning'}>
                       Learning Resources
                     </Link>
                     <div className="LearningIcon">
@@ -168,7 +178,7 @@ function HeaderProfile() {
                   </li>
                 </ul>
               </div>
-              <Link to="/aboutUs">About us</Link>
+              <Link to="/aboutUs" className={href.includes('aboutUs') ? 'active' : ''}>About us</Link>
               <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                 <BiMinus />
               </button>
