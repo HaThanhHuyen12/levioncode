@@ -15,7 +15,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
+import { Modal, Spin } from "antd";
+import { Modal as ModalMaterial, Stack } from "@mui/material"
 import QRCode from "../../image/Levion (2) 1.png";
 
 function ShoppingCart() {
@@ -25,59 +26,90 @@ function ShoppingCart() {
   let total = 0;
   cart.forEach((e) => (total += e.price));
   const discount = 20;
-
+  const [modal, contextHolder] = Modal.useModal();
+  const [showModalLoading, setShowModalLoading] = useState(false);
   const handleRemove = async (id) => {
-    const confirmRemove = window.confirm(
-      "Are you sure you want to remove this item?"
-    );
-    if (confirmRemove) {
-      setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-      await removeItemFromFirestore(id);
-    }
+    modal.confirm({
+      open: true,
+      content: (
+        <p>Are you sure you want to remove this item?</p>
+      ),
+      title: "Confirmation",
+      closable: true,
+      onOk: async () => {
+        setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+        await removeItemFromFirestore(id);
+      },
+      style: {
+        top: 20
+      },
+      okCancel: false
+    })
   };
 
   const handleCheckout = async () => {
-    const confirmCheckout = window.confirm(
-      "Are you sure you want to checkout?"
-    );
-    if (confirmCheckout) {
-      setIsModalOpen(true); // Open the modal
-    }
+    modal.confirm({
+      open: true,
+      content: (
+        <p>Are you sure you want to checkout?</p>
+      ),
+      title: "Confirmation",
+      closable: true,
+      onOk: () => setIsModalOpen(true),
+      style: {
+        top: 20
+      },
+      okCancel: false
+    })
   };
-  const handleConfirm = async  () => {
-    const confirmPayment = window.confirm(
-      "Are you sure you want to confirm payment?"
-    );
-    if (confirmPayment) {
-      const currentUser = getAuth().currentUser;
-      if (currentUser) {
-        const items = cart.map((item) => ({
-          courseId: item.id,
-          courseName: item.name,
-          price: item.price,
-          skill: item.skill,
-          level: item.level,
-          email: currentUser.email,
-          img: "",
-        }));
-
-        setCart([]); // Xóa các mục khỏi giỏ hàng sau khi đã thêm vào "My Learning Journey"
-        try {
-          await addToLearningJourney(currentUser.email, items);
-          console.log("Item added to shopping cart on Firebase.");
-          toast.success("Checkout successful !", {
-            position: toast.POSITION.BOTTOM_RIGHT,
-            autoClose: 3000,
-          });
-          navigate("/profile");
-        } catch (error) {
-          console.log("handleAddToCart ~ error:", error);
-        }
-      }
-    }
+  const handleConfirm = async () => {
+    setIsModalOpen(false);
+    modal.confirm({
+      open: true,
+      content: (
+        <p>Are you sure you want to confirm payment?</p>
+      ),
+      title: "Confirmation",
+      closable: false,
+      onOk: () => {
+        setShowModalLoading(true)
+        setTimeout(handleConfirmPayment, 2000);
+      },
+      onCancel: () => setIsModalOpen(true),
+      style: {
+        top: 20
+      },
+      okCancel: true,
+    })
   };
   const currentUser = getAuth().currentUser;
+  const handleConfirmPayment = async () => {
+    const currentUser = getAuth().currentUser;
+    if (currentUser) {
+      const items = cart.map((item) => ({
+        courseId: item.id,
+        courseName: item.name,
+        price: item.price,
+        skill: item.skill,
+        level: item.level,
+        email: currentUser.email,
+        img: "",
+      }));
 
+      setCart([]); // Xóa các mục khỏi giỏ hàng sau khi đã thêm vào "My Learning Journey"
+      try {
+        await addToLearningJourney(currentUser.email, items);
+        setShowModalLoading(false);
+        toast.success("Checkout successful !", {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          autoClose: 3000,
+        });
+        navigate("/profile");
+      } catch (error) {
+        console.log("handleAddToCart ~ error:", error);
+      }
+    }
+  }
   useEffect(() => {
     if (currentUser) {
       getItemShoppingCartFromFirestore(currentUser.email)
@@ -120,6 +152,8 @@ function ShoppingCart() {
 
   return (
     <div className={styles.ShoppingCart}>
+      {contextHolder}
+
       <LayoutWithHeader>
         {loading ? (
           <p>Loading...</p>
@@ -202,7 +236,21 @@ function ShoppingCart() {
           </div>
         )}
       </LayoutWithHeader>
-      <Modal
+      <ModalMaterial
+        open={showModalLoading}
+        // onClose={() => {}}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Stack sx={{ ...style, borderRadius: 16 }} direction={'column'} alignItems={'center'} justifyContent={'center'}>
+          <p style={{
+            textAlign: 'center',
+            fontSize: 20
+          }}>Please wait for confirmation from levion education center</p>
+          <Spin size="large" />
+        </Stack>
+      </ModalMaterial>
+      <ModalMaterial
         open={isModalOpen}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -237,7 +285,7 @@ function ShoppingCart() {
             <button className={styles.cancel}>Cancel</button>
           </div>
         </Box>
-      </Modal>
+      </ModalMaterial>
     </div>
   );
 }

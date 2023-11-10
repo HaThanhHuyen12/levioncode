@@ -210,9 +210,10 @@
   border-bottom: none;
 }
 .itemLearning {
-  padding: 5%;
+  padding: 5% 0;
   display: flex;
   border-bottom: 1px solid;
+  gap: 3%
 }
 .contentTabs {
   position: relative;
@@ -234,19 +235,15 @@
   margin-top: 2%;
 }
 .LearningJourneyLeft img {
-  width: 28%;
-  height: 88%;
-  margin-top: 2%;
+  width: 20%;
 }
 .infoCourse h6 {
   color: #362355;
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
-  line-height: 32px;
   margin-bottom: 6px;
   width: 394px;
-  height: 32px;
 }
 .infoCourse p {
   color: #9387a8;
@@ -270,8 +267,10 @@
   width: 30%;
 }
 .infoCourse {
-  padding-left: 3%;
-  border-right: 1px solid #9387a8;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
 }
 .skills {
   width: 100%;

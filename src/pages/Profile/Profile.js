@@ -14,6 +14,8 @@ import Empty from "./Empty";
 import { getItemsFromLearningJourney } from "../login/firebase";
 import { useCallback } from "react";
 import { BiEditAlt, BiCheck } from "react-icons/bi";
+import { CircularProgress, Stack } from "@mui/material";
+import { Progress } from "antd";
 
 export default function Profile() {
   const currentUser = localStorage.getItem("data")
@@ -257,6 +259,7 @@ export default function Profile() {
                                 <button>Go to course</button>
                               </a>
                             </div>
+                            <ProgressCourse value={25} />
                           </div>
                         ))}
                       </div>
@@ -305,3 +308,10 @@ export default function Profile() {
     </div>
   );
 }
+
+const ProgressCourse = ({ value }) => (
+  <Stack direction={'column'} gap={2} alignItems={'center'} justifyContent={'center'}>
+    <Progress type="circle" percent={value} strokeColor="#9453ff" strokeWidth={4}/>
+    <p>Your Progress</p>
+  </Stack>
+)

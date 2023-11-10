@@ -12,6 +12,9 @@ import noti from "../../image/notification.png";
 import avtProfile from "../../image/avtcourse.png";
 import { useEffect } from "react";
 import "../Header/Header.css";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 function HeaderProfile() {
   const navigate = useNavigate();
@@ -52,14 +55,14 @@ function HeaderProfile() {
       return (
         <div className="header_right">
           <div className="header_right_Icon">
-            <Link to="/shoppingCart">
-              <img className="addToCart" src={cart1} alt="cart" />
+            <Link to="/shoppingCart" className="shoppingCart">
+              <ShoppingCartIcon />
             </Link>
-            <Link to="#" id="noti">
-              <img className="" src={noti} alt="noti" />
+            <Link to="#" id="noti" className="shoppingCart">
+              <NotificationsIcon />
             </Link>
-            <Link to="#" id="Heart">
-              <img className="" src={heart} alt="heart" />
+            <Link to="#" id="Heart" className="shoppingCart">
+              <FavoriteIcon />
             </Link>
           </div>
           <div className="Profile">
@@ -104,7 +107,7 @@ function HeaderProfile() {
       return (
         <div className="header_right1">
           <Link to="/shoppingCart" className="shoppingCart">
-            <img className="addToCart" src={cart1} alt="cart" />
+            <ShoppingCartIcon />
           </Link>
           <Link to="/" id="SignIn">
             <button id="btn_left">Sign in</button>
@@ -188,8 +191,8 @@ function HeaderProfile() {
         </nav>
       </div>
       <div className="btnCart">
-        <Link to="/shoppingCart">
-          <img className="addToCart1" src={cart1} alt="cart" />
+        <Link to="/shoppingCart" className="shoppingCart">
+          <ShoppingCartIcon />
         </Link>
       </div>
       <button className="nav-btn" onClick={showNavbar}>

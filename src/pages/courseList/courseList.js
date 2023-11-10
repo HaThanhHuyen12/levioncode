@@ -17,6 +17,7 @@ import { addItemToFirestore } from "../login/firebase";
 import { getItemShoppingCartFromFirestore } from "../login/firebase";
 import LayoutWithHeader from "../../components/layoutWithHeader";
 import { Link } from "react-router-dom";
+import { Modal } from "antd";
 function CourseList() {
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
@@ -31,6 +32,8 @@ function CourseList() {
   const [data, setData] = useState([]);
   const auth = getAuth();
   const currentUser = auth.currentUser;
+  const [confirmAddToCart, setConfirmAddToCart] = useState(false);
+  const [modal, contextHolder] = Modal.useModal();
 
   const fetchData = async () => {
     if (!isLoading) {
@@ -58,52 +61,75 @@ function CourseList() {
 
   const handleAddToCart = async (course) => {
     if (currentUser) {
-      const confirmAddToCart = window.confirm("Do you want to add to cart?");
-      if (confirmAddToCart) {
-        const item = {
-          id: course.id,
-          name: course.name,
-          img: "",
-          level: course.level,
-          skill: course.skill,
-          price: course.price,
-          userEmail: currentUser.email,
-        };
-
-        try {
-          const cartItems = await getItemShoppingCartFromFirestore(
-            currentUser.email
-          );
-          const isItemInCart = cartItems.some(
-            (item) => item.name === course.name
-          );
-          if (isItemInCart) {
-            toast.warning("This item is already in your shopping cart!", {
-              position: toast.POSITION.BOTTOM_RIGHT,
-              autoClose: 3000,
-            });
-          } else {
-            await addItemToFirestore(item, currentUser.email);
-            console.log("Item added to the shopping cart on Firebase.");
-            toast.success("Item added to the shopping cart!", {
-              position: toast.POSITION.BOTTOM_RIGHT,
-              autoClose: 3000,
-            });
-            navigate("/shoppingCart");
-
-            const updatedCart = await getItemShoppingCartFromFirestore(
-              currentUser.email
-            );
-            setCart(updatedCart);
-          }
-        } catch (error) {
-          console.log("handleAddToCart ~ error:", error);
-        }
-      }
+      modal.confirm({
+        open: true,
+        content: (
+          <p>Do you want add Course: {course.name} to your cart?</p>
+        ),
+        title: "Confirmation",
+        closable: true,
+        onOk: () => handleConfirmAddToCart(course),
+        style: {
+          top: 20
+        },
+        okCancel: false
+      })
     } else {
-      window.confirm("Please log in before adding to the cart!");
+      modal.info({
+        open: true,
+        content: (
+          <p>Please log in before adding to the cart!</p>
+        ),
+        title: "Nofication",
+        okCancel: true,
+        style: {
+          top: 20
+        }
+      })
     }
   };
+
+  const handleConfirmAddToCart = async (course) => {
+    const item = {
+      id: course.id,
+      name: course.name,
+      img: "",
+      level: course.level,
+      skill: course.skill,
+      price: course.price,
+      userEmail: currentUser.email,
+    };
+
+    try {
+      const cartItems = await getItemShoppingCartFromFirestore(
+        currentUser.email
+      );
+      const isItemInCart = cartItems.some(
+        (item) => item.name === course.name
+      );
+      if (isItemInCart) {
+        toast.warning("This item is already in your shopping cart!", {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          autoClose: 3000,
+        });
+      } else {
+        await addItemToFirestore(item, currentUser.email);
+        console.log("Item added to the shopping cart on Firebase.");
+        toast.success("Item added to the shopping cart!", {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          autoClose: 3000,
+        });
+        navigate("/shoppingCart");
+
+        const updatedCart = await getItemShoppingCartFromFirestore(
+          currentUser.email
+        );
+        setCart(updatedCart);
+      }
+    } catch (error) {
+      console.log("handleAddToCart ~ error:", error);
+    }
+  }
 
   const filteredCourses = data
     .filter((val) => {
@@ -151,6 +177,7 @@ function CourseList() {
 
   return (
     <div className={styles.CourseList}>
+      {contextHolder}
       <LayoutWithHeader>
         <TitleOfCourseList />
         <div className={styles.CourseListDetail}>

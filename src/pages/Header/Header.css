@@ -31,6 +31,12 @@ nav a {
 }
 .shoppingCart {
   padding-top: 2%;
+  scale: 1.5;
+}
+.shoppingCart:hover {
+  color: #9453ff;
+  transition: all .2s;
+  scale: 1.8;
 }
 nav a:hover {
   color: var(--secondaryColor);
