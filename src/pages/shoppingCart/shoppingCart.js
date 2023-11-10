@@ -18,6 +18,7 @@ import Typography from "@mui/material/Typography";
 import { Modal, Spin } from "antd";
 import { Modal as ModalMaterial, Stack } from "@mui/material"
 import QRCode from "../../image/Levion (2) 1.png";
+import ModalCustom from "../../components/ModalCustom";
 
 function ShoppingCart() {
   const [cart, setCart] = useState([]);
@@ -28,59 +29,70 @@ function ShoppingCart() {
   const discount = 20;
   const [modal, contextHolder] = Modal.useModal();
   const [showModalLoading, setShowModalLoading] = useState(false);
+  const [showRemoveModal, setShowRemoveModal] = useState(false);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+  const [showConfirmPayment, setShowConfirmPayment] = useState(false);
+  const [selectedIdCourse, setSelectedIdCourse] = useState(null);
+  console.log(cart)
   const handleRemove = async (id) => {
-    modal.confirm({
-      open: true,
-      content: (
-        <p>Are you sure you want to remove this item?</p>
-      ),
-      title: "Confirmation",
-      closable: true,
-      onOk: async () => {
-        setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-        await removeItemFromFirestore(id);
-      },
-      style: {
-        top: 20
-      },
-      okCancel: false
-    })
+    // modal.confirm({
+    //   open: true,
+    //   content: (
+    //     <p>Are you sure you want to remove this item?</p>
+    //   ),
+    //   title: "Confirmation",
+    //   closable: true,
+    //   onOk: async () => {
+    //     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+    //     await removeItemFromFirestore(id);
+    //   },
+    //   style: {
+    //     top: 20
+    //   },
+    //   okCancel: false
+    // })
+    setSelectedIdCourse(id)
+    setShowRemoveModal(true);
   };
 
   const handleCheckout = async () => {
-    modal.confirm({
-      open: true,
-      content: (
-        <p>Are you sure you want to checkout?</p>
-      ),
-      title: "Confirmation",
-      closable: true,
-      onOk: () => setIsModalOpen(true),
-      style: {
-        top: 20
-      },
-      okCancel: false
-    })
+    // modal.confirm({
+    //   open: true,
+    //   content: (
+    //     <p>Are you sure you want to checkout?</p>
+    //   ),
+    //   title: "Confirmation",
+    //   closable: true,
+    //   onOk: () => setIsModalOpen(true),
+    //   style: {
+    //     top: 20
+    //   },
+    //   okCancel: false
+    // })
+    setShowCheckoutModal(true)
   };
   const handleConfirm = async () => {
     setIsModalOpen(false);
-    modal.confirm({
-      open: true,
-      content: (
-        <p>Are you sure you want to confirm payment?</p>
-      ),
-      title: "Confirmation",
-      closable: false,
-      onOk: () => {
-        setShowModalLoading(true)
-        setTimeout(handleConfirmPayment, 2000);
-      },
-      onCancel: () => setIsModalOpen(true),
-      style: {
-        top: 20
-      },
-      okCancel: true,
-    })
+    setShowConfirmPayment(true)
+    // modal.confirm({
+    //   icon: <></>,
+    //   open: true,
+    //   content: (
+    //     <p style={{
+    //       textAlign: 'center'
+    //     }}>Are you sure you want to confirm payment?</p>
+    //   ),
+    //   closable: false,
+    //   onOk: () => {
+    //     setShowModalLoading(true)
+    //     setTimeout(handleConfirmPayment, 2000);
+    //   },
+    //   onCancel: () => setIsModalOpen(true),
+    //   style: {
+    //     top: 20
+    //   },
+    //   okCancel: true,
+    // })
   };
   const currentUser = getAuth().currentUser;
   const handleConfirmPayment = async () => {
@@ -96,14 +108,17 @@ function ShoppingCart() {
         img: "",
       }));
 
-      setCart([]); // Xóa các mục khỏi giỏ hàng sau khi đã thêm vào "My Learning Journey"
       try {
         await addToLearningJourney(currentUser.email, items);
+        items.forEach(async (item) => {
+          await removeItemFromFirestore(item.courseId)
+        })
         setShowModalLoading(false);
         toast.success("Checkout successful !", {
           position: toast.POSITION.BOTTOM_RIGHT,
           autoClose: 3000,
         });
+        setCart([])
         navigate("/profile");
       } catch (error) {
         console.log("handleAddToCart ~ error:", error);
@@ -236,13 +251,45 @@ function ShoppingCart() {
           </div>
         )}
       </LayoutWithHeader>
+      <ModalCustom open={showRemoveModal} content={
+        (
+          <>
+            <p style={{ textAlign: 'center' }}>Are you sure you want to remove this item?</p>
+          </>
+        )
+      } onCancel={() => setShowRemoveModal(false)} onOk={async () => {
+        setShowRemoveModal(false)
+        setCart((prevCart) => prevCart.filter((item) => item.id !== selectedIdCourse));
+        await removeItemFromFirestore(selectedIdCourse);
+      }} />
+      <ModalCustom open={showCheckoutModal} content={
+        (
+          <>
+            <p style={{ textAlign: 'center' }}>Are you sure you want to checkout?</p>
+          </>
+        )
+      } onCancel={() => setShowCheckoutModal(false)} onOk={() => {
+        setShowCheckoutModal(false)
+        setIsModalOpen(true)
+      }} />
+      <ModalCustom open={showConfirmPayment} content={
+        (
+          <>
+            <p style={{ textAlign: 'center' }}>Are you sure you want to confirm payment?</p>
+          </>
+        )
+      } onCancel={() => setShowConfirmPayment(false)} onOk={() => {
+        setShowConfirmPayment(false)
+        setShowModalLoading(true)
+        setTimeout(handleConfirmPayment, 2000);
+      }} />
       <ModalMaterial
         open={showModalLoading}
         // onClose={() => {}}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Stack sx={{ ...style, borderRadius: 16 }} direction={'column'} alignItems={'center'} justifyContent={'center'}>
+        <Stack sx={{ ...style, borderRadius: 2 }} direction={'column'} alignItems={'center'} justifyContent={'center'} gap={4}>
           <p style={{
             textAlign: 'center',
             fontSize: 20

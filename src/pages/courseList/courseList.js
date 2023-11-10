@@ -18,6 +18,8 @@ import { getItemShoppingCartFromFirestore } from "../login/firebase";
 import LayoutWithHeader from "../../components/layoutWithHeader";
 import { Link } from "react-router-dom";
 import { Modal } from "antd";
+import { Button, Stack } from "@mui/material";
+import ModalCustom from "../../components/ModalCustom";
 function CourseList() {
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
@@ -33,6 +35,7 @@ function CourseList() {
   const auth = getAuth();
   const currentUser = auth.currentUser;
   const [confirmAddToCart, setConfirmAddToCart] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState(null)
   const [modal, contextHolder] = Modal.useModal();
 
   const fetchData = async () => {
@@ -61,19 +64,8 @@ function CourseList() {
 
   const handleAddToCart = async (course) => {
     if (currentUser) {
-      modal.confirm({
-        open: true,
-        content: (
-          <p>Do you want add Course: {course.name} to your cart?</p>
-        ),
-        title: "Confirmation",
-        closable: true,
-        onOk: () => handleConfirmAddToCart(course),
-        style: {
-          top: 20
-        },
-        okCancel: false
-      })
+      setConfirmAddToCart(true)
+      setSelectedCourse(course)
     } else {
       modal.info({
         open: true,
@@ -177,7 +169,20 @@ function CourseList() {
 
   return (
     <div className={styles.CourseList}>
-      {contextHolder}
+      {
+        selectedCourse && (
+          <ModalCustom open={confirmAddToCart} content={
+            (
+              <>
+                <p style={{ textAlign: 'center' }}>Do you want add Course: {selectedCourse.name}?</p>
+              </>
+            )
+          } onCancel={() => setConfirmAddToCart(false)} onOk={() => {
+            handleConfirmAddToCart(selectedCourse)
+            setConfirmAddToCart(false)
+          }} />
+        )
+      }
       <LayoutWithHeader>
         <TitleOfCourseList />
         <div className={styles.CourseListDetail}>

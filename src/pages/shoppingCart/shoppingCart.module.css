@@ -82,10 +82,12 @@
   width: 100%;
   /* margin-right: 40px; */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .courseDetail_right {
   display: flex;
+  gap: 5%;
+  margin-right: 3%;
 }
 .fee {
   width: 69px;
@@ -330,7 +332,7 @@
   text-decoration: underline;
 }
 .remove {
-  padding: 13%;
+  padding: 13% 0;
 }
 
 @media screen and (max-width: 768px) {
