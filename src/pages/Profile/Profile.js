@@ -255,7 +255,7 @@ export default function Profile() {
                                   <p>{item.skill}</p>
                                 </div>
                               </div>
-                              <a href="/courseList">
+                              <a href="/courseDetail">
                                 <button>Go to course</button>
                               </a>
                             </div>
